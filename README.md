@@ -46,7 +46,7 @@ The plugin will now process any image you upload through the panel, find a focus
 
 ## Run tests
 
-I have included [a sample test with 30 images (1500px wide)](https://github.com/sylvainjule/kirby-autofocus/blob/master/_test/test.md).
+I have included [a sample test with 30 images](https://github.com/sylvainjule/kirby-autofocus/blob/master/_test/test.md).
 
 You can run you own tests to determine if the algorithm suits your needs. One simple way is to add the `focus` field in your blueprint so that you can have a preview of where the focus is set for every image you upload.
 
