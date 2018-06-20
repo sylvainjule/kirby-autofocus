@@ -1,4 +1,4 @@
-var focus = function(canvas, options){
+var focusCanvas = function(canvas, options){
   options = options || {};
   var debug = options.debug;
 
