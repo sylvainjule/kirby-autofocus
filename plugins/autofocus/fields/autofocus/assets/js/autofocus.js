@@ -80,7 +80,7 @@ var returnPos = function(file, filename, uri) {
 
         _ctx.drawImage(_img, 0, 0);
 
-        var _p = focus(_canvas, { debug: false }),
+        var _p = focusCanvas(_canvas, { debug: false }),
             _propX = _p.x / _w,
             _propY = _p.y / _h,
             _propX = (Math.round(_propX * 100)/100).toFixed(2),
