@@ -1,0 +1,36 @@
+<?php
+
+return array(
+	'routes' => array(
+		array(
+	        'pattern' => 'autofocus/save-focus',
+	        'method'  => 'POST',
+	        'action'  => function() {
+	        	// get coordinates, find page
+	        	$filename = get('filename');
+	            $uri      = get('uri');
+	            $coords   = get('coords');
+	            $page     = site()->childrenAndDrafts()->find($uri);
+	            $file     = $page->file($filename);
+	            $key      = option('sylvainjule.autofocus.key');
+
+	        	try {
+	        		if($file->content()->get($key)->isEmpty() || $file->content()->get($key) == '{"x":0.5,"y":0.5}') {
+		        		$file->update(array($key => $coords));
+		        		return array('status' => 'success');
+		        	}
+		        	else {
+		        		return array('status' => 'not-empty');
+		        	}
+	        	}
+	        	catch (Exception $e) {
+	        		$response = array(
+			            'status' => 'error',
+			            'message'  => $e->getMessage()
+			        );
+			        return $response;
+	        	}
+	        }
+	    ),
+	)
+);
