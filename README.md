@@ -36,15 +36,9 @@ Alternatively, you can install it with composer: ```composer require sylvainjule
 
 ## Usage
 
-You can set the Focus' field key in your config (default is `focus`):
+There's nothing else to do.
 
-```php
-return array(
-    'sylvainjule.autofocus.key' => 'focus',
-);
-```
-
-The plugin will now process any image you upload through the panel, find a focus point, and use the `autofocus.key` to find where to write the coordinates. Then you can use the Focus plugin as you usually do.
+The plugin will now process any image you upload through the panel, find a focus point, and use the `flokosiol.focus.field.key` to write the coordinates. Then you can use the Focus plugin as you usually do.
 
 <br/>
 

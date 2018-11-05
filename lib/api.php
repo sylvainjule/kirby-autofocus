@@ -12,7 +12,7 @@ return array(
 	            $coords   = get('coords');
 	            $page     = site()->childrenAndDrafts()->find($uri);
 	            $file     = $page->file($filename);
-	            $key      = option('sylvainjule.autofocus.key');
+	            $key      = option('flokosiol.focus.field.key', 'focus');
 
 	        	try {
 	        		if($file->content()->get($key)->isEmpty() || $file->content()->get($key) == '{"x":0.5,"y":0.5}') {
