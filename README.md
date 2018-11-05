@@ -2,7 +2,9 @@
 
 Content aware image cropping for kirby.
 
-![screenshot-kirby-autofocus](https://user-images.githubusercontent.com/14079751/29251169-0c1c2c5a-8051-11e7-8f6d-18dd50ac44a8.jpg)
+![screenshot-autofocus-k3](https://user-images.githubusercontent.com/14079751/47998289-15b0f100-e0ff-11e8-8865-0267db33660d.jpg)
+
+<br/>
 
 ## Overview
 
@@ -10,7 +12,7 @@ Autofocus is an extension for the [Focus plugin](https://github.com/flokosiol/ki
 
 This plugin acts as a JS `image.upload` hook, processing the / each image with the [focus component](https://github.com/component/focus), determining its appropriate focus point and saving it to the meta data file.
 
-Please note that :
+**Please note that :**
 
 - This is an experimental plugin. The algorithm isn't foolproof, it works best with certain kinds of images, and obviously the more the context of an image is *« clear »*, the more its efficiency increases. I have included [a sample test with 30 images](https://github.com/sylvainjule/kirby-autofocus/blob/master/_test/test.md), as well as a way to run your own.
     
@@ -18,6 +20,7 @@ Please note that :
 
 - The plugin will only process images uploaded with the `files` section. It will not process replaced images. Suggestions welcome if you find a way to register a better hook.
     
+<br/>
 
 ## Installation
 
@@ -29,11 +32,21 @@ Once it is done, download and copy this repository to ```/site/plugins/autofocus
 
 Alternatively, you can install it with composer: ```composer require sylvainjule/autofocus```
 
+<br/>
+
 ## Usage
 
-There's nothing else to do.
+You can set the Focus' field key in your config (default is `focus`):
 
-The plugin will now process any image you upload through the panel, find a focus point, and use the Focus' field key to write the coordinates. Then you can use the Focus plugin as you usually do.
+```php
+return array(
+    'sylvainjule.autofocus.key' => 'focus',
+);
+```
+
+The plugin will now process any image you upload through the panel, find a focus point, and use the `autofocus.key` to find where to write the coordinates. Then you can use the Focus plugin as you usually do.
+
+<br/>
 
 ## Run tests
 
@@ -44,10 +57,14 @@ You can run you own tests to determine if the algorithm suits your needs. One si
 An other way is to open the `index.html` of the `_test` folder in a browser, and upload an image.
 The images used for calculation will be displayed on the page, as well as the coordinates in the console.
 
+<br/>
+
 ## Credits
 
 - [@flokosiol](https://github.com/flokosiol/) for his great help with this extension.
 - The [focus component](https://github.com/component/focus) is used to determine the focus point on upload.
+
+<br/>
 
 ## License
 
