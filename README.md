@@ -24,6 +24,8 @@ This plugin acts as a JS `image.upload` hook, processing the / each image with t
 
 ## Installation
 
+> If you are looking to use this plugin with Kirby 2, please switch to the `kirby-2` branch.
+
 First, you must install the [Focus plugin](https://github.com/flokosiol/kirby-focus).
 
 > Note : the plugin would still work without it, but apart from adding the focus point to the .txt file, you wouldn't be able to preview / override / use it with the Focus methods.
