@@ -9,8 +9,14 @@ return array(
 	        	// get coordinates, find page
 	        	$filename = get('filename');
 	            $uri      = get('uri');
+
+	            // from pages/first-level+second-level
+	            // to   first-level/second-level
+	            $uri      = str_replace('+', '/', $uri);
+	            $uri      = preg_replace('/^pages\//', '', $uri);
+
 	            $coords   = get('coords');
-	            $page     = site()->childrenAndDrafts()->find($uri);
+	            $page     = kirby()->page($uri);
 	            $file     = $page->file($filename);
 	            $key      = option('flokosiol.focus.field.key', 'focus');
 
