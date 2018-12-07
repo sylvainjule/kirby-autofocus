@@ -1,5 +1,5 @@
 import Autofocus from './helpers/autofocus.js'
 
-panel.plugin('sylvainjule/color-palette', {
+panel.plugin('sylvainjule/autofocus', {
 	use: [Autofocus],
 });
