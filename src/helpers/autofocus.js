@@ -6,12 +6,23 @@ export default function(Vue) {
 
 	Vue.component('k-files-section', {
 	    extends: original,
+	    data() {
+	    	return {
+	    		firstLoad: true,
+	    	}
+	    }, 
 	    watch: {
 	    	data: {
 	    		immediate: false,
 	    		handler(newData, oldData) {
 	    			// if there's no old data, it's been triggered while initializing
-	    			if(!oldData.length) return false
+	    			if(this.isLoading) return false
+	    			if(!oldData.length) {
+	    				if(this.firstLoad) {
+	    					this.firstLoad = false
+	    					return false
+	    				} 
+	    			} 
 
 	    			// compare the two arrays to check for new file(s)
 			        let newFiles = newData.filter((el, index) => {
@@ -71,7 +82,7 @@ export default function(Vue) {
 	    	saveFocus(file, coords) {
 	    		this.$api.post('autofocus/save-focus', { uri: file.parent, filename: file.filename, coords: coords })
 	    			.then(response => {
-			        	console.log(response)
+			        	// console.log(response)
 			        })
 			        .catch(error => {
 			        	console.log(error)
