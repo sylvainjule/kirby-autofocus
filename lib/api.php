@@ -16,7 +16,7 @@ return array(
 	            $uri      = preg_replace('/^pages\//', '', $uri);
 
 	            $coords   = get('coords');
-	            $page     = kirby()->page($uri);
+	            $page     = $uri == 'site' ? kirby()->site() : kirby()->page($uri);
 	            $file     = $page->file($filename);
 	            $key      = option('flokosiol.focus.field.key', 'focus');
 
