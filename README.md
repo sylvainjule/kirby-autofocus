@@ -1,3 +1,5 @@
+> ⚠️ This plugin won't be maintained for Kirby 4+.
+
 # Kirby Autofocus
 
 Content aware image cropping for kirby.
